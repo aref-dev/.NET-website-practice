@@ -13,7 +13,7 @@ namespace aref_final.Models
         public decimal Price { get; set; } = decimal.Zero;
         public string Category { get; set; } = string.Empty;
         
-        [Display(Name = "Image File Name")]
+        [Display(Name = "Image File Path")]
         public string ImageFileName { get; set; } = string.Empty;
     }
 }
