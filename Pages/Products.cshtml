@@ -5,9 +5,9 @@
 }
 
 <nav class="d-flex justify-content-center">
-    <a class="p-3 text-muted" href="#" style="text-decoration: none"><h4>STEM Toys</h4></a>
-    <a class="p-3 text-muted" href="#" style="text-decoration: none"><h4>Puzzles</h4></a>
-    <a class="p-3 text-muted" href="#" style="text-decoration: none"><h4>Outdoors Toys</h4></a>
+    <a class="p-3 text-muted" href="?category=STEM" style="text-decoration: none"><h4>STEM Toys</h4></a>
+    <a class="p-3 text-muted" href="?category=Puzzles" style="text-decoration: none"><h4>Puzzles</h4></a>
+    <a class="p-3 text-muted" href="?category=Outdoors" style="text-decoration: none"><h4>Outdoors Toys</h4></a>
 </nav>
 
 
@@ -29,7 +29,7 @@
                             <p class="card-text">@product.Price.ToString("C")</p>
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="btn-group">
-                                    <a href="">
+                                    <a href="/ProductDetails?id=@product.ID">
                                         <button class="btn btn-sm btn-outline-secondary" type="button">View Details</button>
                                     </a>
                                 </div>

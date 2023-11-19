@@ -2,6 +2,7 @@ using aref_final.Data;
 using aref_final.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace aref_final.Pages
 {
@@ -16,9 +17,16 @@ namespace aref_final.Pages
 
 		public IList<Toy> Toys { get; set; }
 
-		public async Task OnGetAsync()
+		public async Task OnGetAsync(string category)
         {
-            Toys = _context.Toy.ToList();
+            IQueryable<Toy> toysQuery = _context.Toy;
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                toysQuery = toysQuery.Where(toy => toy.Category == category);
+            }
+
+            Toys = await toysQuery.ToListAsync();
         }
     }
 }
