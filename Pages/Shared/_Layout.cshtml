@@ -26,8 +26,8 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Contacts">Contact Us</a>
                         </li>
                     </ul>
-                    <form class="d-flex justify-content-end">
-                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <form class="d-flex justify-content-end" action="/Search" method="get">
+                        <input class="form-control me-sm-2" type="search" name="SearchTerm" placeholder="Search">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>

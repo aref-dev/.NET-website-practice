@@ -1,0 +1,46 @@
+﻿@page
+@model aref_final.Pages.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+@if (Model.SearchResults != null && Model.SearchResults.Any())
+{
+    <h2>Search Results</h2>
+    <div class="album py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+        @foreach (var product in Model.SearchResults)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow text-center">
+                    <a href="/ProductDetails?id=@product.ID">
+                        <img alt="Thumbnail [200x200]"
+                             class="card-img mx-auto my-2"
+                             data-holder-rendered="true"
+                             data-src="holder.js/200px200?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                             src="@product.ImageFileName" }"
+                             style="height: auto; width: 200px; display: block; border-radius: 15px; overflow: hidden;">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-text">@product.Name</h4>
+                        <p class="card-text">@product.Price.ToString("C")</p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="btn-group">
+                                <a href="/ProductDetails?id=@product.ID">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View Details</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }   
+    </div>
+    </div>
+    </div>
+}
+else
+{
+    <p>No results found.</p>
+}
